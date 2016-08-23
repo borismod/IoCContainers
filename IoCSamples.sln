@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCSample03_MethodInjection", "IoCSamples\IoCSample03_MethodInjection.csproj", "{B2DDC4A2-6D1D-4329-9925-84171E5C3223}"
 EndProject
@@ -10,8 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCSample02_AttributeInjection", "IoCSample_AttributeInjection\IoCSample02_AttributeInjection.csproj", "{F84ADB3A-E363-412D-ADD2-A5C05B2D1992}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCSample04_Singleton", "IoCSample_Singleton\IoCSample04_Singleton.csproj", "{4D7BC205-EAF6-4BCB-9615-BF7D25CF6ABE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCSample00_Simple", "IoCSample00_Simple\IoCSample00_Simple.csproj", "{A9807236-388A-4D00-9192-518032C0A11D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCSample05_AutoFacSingleton", "IoCSample05_AutoFacSingleton\IoCSample05_AutoFacSingleton.csproj", "{77BA3F7E-A8B5-42BD-B18B-AA4D4EF2740B}"
 EndProject
@@ -22,10 +20,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCSample08_AutoFacModule", "IoCSample_AutoFacModule\IoCSample08_AutoFacModule.csproj", "{618D111B-4F0D-4BBF-86F6-7C434448C8B8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCSample09_Interception", "IoCSample09_Interception\IoCSample09_Interception.csproj", "{9C230169-7128-4856-9064-1365470E546F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCSample00_InversionOfControl", "IoCSample00_InversionOfControl\IoCSample00_InversionOfControl.csproj", "{B184A00A-1667-4501-A513-5CF8EB3CA5BA}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 InversionOfControl", "00 InversionOfControl", "{1C0DA56E-C265-4AC9-AE7A-E6D8EE6770B0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 Unity Explicit", "10 Unity Explicit", "{74951EBA-2E65-40F7-B298-85B9A8B5ECB8}"
 EndProject
@@ -38,6 +32,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCSample04.1_NinjectSingleton", "IoCSample04.1_NinjectSingleton\IoCSample04.1_NinjectSingleton.csproj", "{067E5063-B857-4041-BF6F-04E38764BE51}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "50 Ninject Explicit Singleton", "50 Ninject Explicit Singleton", "{3EEB8A2E-2E48-4B26-BCD3-16718A3D66D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoorManDependencyInjection", "PoorManDependencyInjection\PoorManDependencyInjection.csproj", "{6034449D-7B1B-4516-9DC7-8B75C791337A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 Poor Man Dependency Injection", "05 Poor Man Dependency Injection", "{50CE7860-01FD-4AB8-9093-F52FF2406F18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,10 +59,6 @@ Global
 		{4D7BC205-EAF6-4BCB-9615-BF7D25CF6ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D7BC205-EAF6-4BCB-9615-BF7D25CF6ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D7BC205-EAF6-4BCB-9615-BF7D25CF6ABE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A9807236-388A-4D00-9192-518032C0A11D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9807236-388A-4D00-9192-518032C0A11D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9807236-388A-4D00-9192-518032C0A11D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9807236-388A-4D00-9192-518032C0A11D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{77BA3F7E-A8B5-42BD-B18B-AA4D4EF2740B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{77BA3F7E-A8B5-42BD-B18B-AA4D4EF2740B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77BA3F7E-A8B5-42BD-B18B-AA4D4EF2740B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -85,14 +79,14 @@ Global
 		{9C230169-7128-4856-9064-1365470E546F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C230169-7128-4856-9064-1365470E546F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C230169-7128-4856-9064-1365470E546F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B184A00A-1667-4501-A513-5CF8EB3CA5BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B184A00A-1667-4501-A513-5CF8EB3CA5BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B184A00A-1667-4501-A513-5CF8EB3CA5BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B184A00A-1667-4501-A513-5CF8EB3CA5BA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{067E5063-B857-4041-BF6F-04E38764BE51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{067E5063-B857-4041-BF6F-04E38764BE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{067E5063-B857-4041-BF6F-04E38764BE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{067E5063-B857-4041-BF6F-04E38764BE51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6034449D-7B1B-4516-9DC7-8B75C791337A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6034449D-7B1B-4516-9DC7-8B75C791337A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6034449D-7B1B-4516-9DC7-8B75C791337A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6034449D-7B1B-4516-9DC7-8B75C791337A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,7 +96,7 @@ Global
 		{3FFA5D31-0E7D-4D3A-8F60-0A889BC12F11} = {74951EBA-2E65-40F7-B298-85B9A8B5ECB8}
 		{F84ADB3A-E363-412D-ADD2-A5C05B2D1992} = {955DFEF4-4894-4C70-9649-8E40D7864F64}
 		{4D7BC205-EAF6-4BCB-9615-BF7D25CF6ABE} = {BC8C054B-F754-4574-9C09-2881966606DC}
-		{B184A00A-1667-4501-A513-5CF8EB3CA5BA} = {1C0DA56E-C265-4AC9-AE7A-E6D8EE6770B0}
 		{067E5063-B857-4041-BF6F-04E38764BE51} = {3EEB8A2E-2E48-4B26-BCD3-16718A3D66D9}
+		{6034449D-7B1B-4516-9DC7-8B75C791337A} = {50CE7860-01FD-4AB8-9093-F52FF2406F18}
 	EndGlobalSection
 EndGlobal
