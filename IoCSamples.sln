@@ -23,6 +23,22 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCSample08_AutoFacModule",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCSample09_Interception", "IoCSample09_Interception\IoCSample09_Interception.csproj", "{9C230169-7128-4856-9064-1365470E546F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCSample00_InversionOfControl", "IoCSample00_InversionOfControl\IoCSample00_InversionOfControl.csproj", "{B184A00A-1667-4501-A513-5CF8EB3CA5BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 InversionOfControl", "00 InversionOfControl", "{1C0DA56E-C265-4AC9-AE7A-E6D8EE6770B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 Unity Explicit", "10 Unity Explicit", "{74951EBA-2E65-40F7-B298-85B9A8B5ECB8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 Unity Explicit Attribute", "20 Unity Explicit Attribute", "{955DFEF4-4894-4C70-9649-8E40D7864F64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30 Unity Explicit Method", "30 Unity Explicit Method", "{7C1F79DB-DD23-467D-A2BB-38CFC042E748}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "40 Unity Explicit Singleton", "40 Unity Explicit Singleton", "{BC8C054B-F754-4574-9C09-2881966606DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCSample04.1_NinjectSingleton", "IoCSample04.1_NinjectSingleton\IoCSample04.1_NinjectSingleton.csproj", "{067E5063-B857-4041-BF6F-04E38764BE51}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "50 Ninject Explicit Singleton", "50 Ninject Explicit Singleton", "{3EEB8A2E-2E48-4B26-BCD3-16718A3D66D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,8 +85,24 @@ Global
 		{9C230169-7128-4856-9064-1365470E546F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C230169-7128-4856-9064-1365470E546F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C230169-7128-4856-9064-1365470E546F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B184A00A-1667-4501-A513-5CF8EB3CA5BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B184A00A-1667-4501-A513-5CF8EB3CA5BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B184A00A-1667-4501-A513-5CF8EB3CA5BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B184A00A-1667-4501-A513-5CF8EB3CA5BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{067E5063-B857-4041-BF6F-04E38764BE51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{067E5063-B857-4041-BF6F-04E38764BE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{067E5063-B857-4041-BF6F-04E38764BE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{067E5063-B857-4041-BF6F-04E38764BE51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B2DDC4A2-6D1D-4329-9925-84171E5C3223} = {7C1F79DB-DD23-467D-A2BB-38CFC042E748}
+		{3FFA5D31-0E7D-4D3A-8F60-0A889BC12F11} = {74951EBA-2E65-40F7-B298-85B9A8B5ECB8}
+		{F84ADB3A-E363-412D-ADD2-A5C05B2D1992} = {955DFEF4-4894-4C70-9649-8E40D7864F64}
+		{4D7BC205-EAF6-4BCB-9615-BF7D25CF6ABE} = {BC8C054B-F754-4574-9C09-2881966606DC}
+		{B184A00A-1667-4501-A513-5CF8EB3CA5BA} = {1C0DA56E-C265-4AC9-AE7A-E6D8EE6770B0}
+		{067E5063-B857-4041-BF6F-04E38764BE51} = {3EEB8A2E-2E48-4B26-BCD3-16718A3D66D9}
 	EndGlobalSection
 EndGlobal

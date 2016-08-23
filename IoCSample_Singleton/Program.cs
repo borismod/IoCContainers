@@ -12,14 +12,16 @@ namespace IoCSample_Singleton
     {
         static void Main(string[] args)
         {
-            UnityContainer ioc = new UnityContainer();
-            ioc.RegisterType<ICustomerRepository, CustomerRepository>(
-                new ContainerControlledLifetimeManager());
-            var customerRepository = ioc.Resolve<ICustomerRepository>();
+            UnityContainer container = new UnityContainer();
 
-            ioc.RegisterType<ICustomerDTOMapper, CustomerDtoMapper>();
-            ioc.RegisterType<ICustomerService, CustomerService>();
-            var customerService = ioc.Resolve<CustomerService>();
+            container.RegisterType<ICustomerRepository, CustomerRepository>(
+                new ContainerControlledLifetimeManager());
+
+            var customerRepository = container.Resolve<ICustomerRepository>();
+
+            container.RegisterType<ICustomerDTOMapper, CustomerDtoMapper>();
+            container.RegisterType<ICustomerService, CustomerService>();
+            var customerService = container.Resolve<CustomerService>();
         }
     }
 }

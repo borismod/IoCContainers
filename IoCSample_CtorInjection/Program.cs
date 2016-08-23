@@ -1,4 +1,5 @@
 ﻿using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.Configuration;
 
 namespace IoCSample_CtorInjection
 {
@@ -6,11 +7,19 @@ namespace IoCSample_CtorInjection
     {
         static void Main(string[] args)
         {
-            UnityContainer ioc = new UnityContainer();
-            ioc.RegisterType<ICustomerRepository, CustomerRepository>();
-            ioc.RegisterType<ICustomerDTOMapper, CustomerDtoMapper>();
-            ioc.RegisterType<ICustomerService, CustomerService>();
-            var customerService = ioc.Resolve<CustomerService>();
+            UnityContainer container = new UnityContainer();
+
+            container.LoadConfiguration();
+
+            container.RegisterType<ICustomerRepository, CustomerRepository>();
+
+            container.RegisterType<ICustomerDTOMapper, CustomerDtoMapper>();
+            container.RegisterType<ICustomerService, CustomerService>();
+
+            var customerService = container.Resolve<CustomerService>();
+
+
+
         }
     }
 }
