@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.Unity;
+﻿using System;
+using Microsoft.Practices.Unity;
 
 #region singleton
 
@@ -14,14 +15,24 @@ namespace IoCSample_Singleton
         {
             UnityContainer container = new UnityContainer();
 
-            container.RegisterType<ICustomerRepository, CustomerRepository>(
-                new ContainerControlledLifetimeManager());
+            //container.RegisterType<ICustomerRepository, CustomerRepository>(
+            //    new ContainerControlledLifetimeManager());
 
-            var customerRepository = container.Resolve<ICustomerRepository>();
+            container.RegisterType<ICustomerRepository, CustomerRepository>();
 
             container.RegisterType<ICustomerDTOMapper, CustomerDtoMapper>();
             container.RegisterType<ICustomerService, CustomerService>();
-            var customerService = container.Resolve<CustomerService>();
+            var customerService = container.Resolve<ICustomerService>();
+
+            var firstRepository = container.Resolve<ICustomerRepository>();
+            var secondRepository = container.Resolve<ICustomerRepository>();
+
+            Console.WriteLine(firstRepository.SessionId);
+
+            Console.WriteLine(secondRepository.SessionId);
+
+            Console.ReadKey();
+
         }
     }
 }

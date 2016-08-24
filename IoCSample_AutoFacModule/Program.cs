@@ -15,8 +15,10 @@ namespace IoCSample_AutoFacModule
         private static void Main(string[] args)
         {
             var containerBuilder = new ContainerBuilder();
-            //containerBuilder.RegisterModule<LoggingModule>();
-            containerBuilder.RegisterAssemblyModules(Assembly.GetExecutingAssembly());
+
+            containerBuilder.RegisterModule<LoggingModule>();
+
+            //containerBuilder.RegisterAssemblyModules(Assembly.GetExecutingAssembly());
             containerBuilder.RegisterType<CustomerService>().AsImplementedInterfaces();
 
             var container = containerBuilder.Build();

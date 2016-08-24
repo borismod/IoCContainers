@@ -4,19 +4,19 @@ namespace IoCSample_Singleton
 {
     public class CustomerService : ICustomerService
     {
-        private ICustomerRepository m_Repository;
-        private ICustomerDTOMapper m_Mapper;
+        private ICustomerRepository _repository;
+        private ICustomerDTOMapper _mapper;
 
         public CustomerService(
             ICustomerRepository repository,
             ICustomerDTOMapper mapper)
         {
-            m_Repository = repository;
-            m_Mapper = mapper;
+            _repository = repository;
+            _mapper = mapper;
         }
     }
 
-    public class ICustomerDTOMapper
+    public interface ICustomerDTOMapper
     {
     }
 
@@ -30,15 +30,21 @@ namespace IoCSample_Singleton
 
     public interface ICustomerRepository
     {
+        Guid SessionId { get; }
     }
 
     public class CustomerRepository : ICustomerRepository
     {
-        private Guid m_SessionId;
+        private Guid _sessionId;
 
         public CustomerRepository()
         {
-            m_SessionId = Guid.NewGuid();
+            _sessionId = Guid.NewGuid();
+        }
+
+        public Guid SessionId
+        {
+            get { return _sessionId; }
         }
     }
 }

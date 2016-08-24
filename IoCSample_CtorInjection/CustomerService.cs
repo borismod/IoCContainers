@@ -4,19 +4,19 @@ namespace IoCSample_CtorInjection
 {
     public class CustomerService : ICustomerService
     {
-        private ICustomerRepository m_Repository;
-        private ICustomerDTOMapper m_Mapper;
+        private ICustomerRepository _repository;
+        private ICustomerDTOMapper _mapper;
 
         public CustomerService(
             ICustomerRepository repository,
             ICustomerDTOMapper mapper)
         {
-            m_Repository = repository;
-            m_Mapper = mapper;
+            _repository = repository;
+            _mapper = mapper;
         }
     }
 
-    public class ICustomerDTOMapper
+    public interface ICustomerDTOMapper
     {
     }
 

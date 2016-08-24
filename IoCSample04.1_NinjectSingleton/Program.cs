@@ -10,7 +10,6 @@ namespace IoCSample04._1_NinjectSingleton
             IKernel kernel = new StandardKernel();
 
             kernel.Bind<ICustomerRepository>().To<CustomerRepository>().InSingletonScope();
-            // kernel.Bind<ICustomerRepository>().To<CustomerRepository>();
 
             var customerRepositoryFirst = kernel.Get<ICustomerRepository>();
 

@@ -1,4 +1,5 @@
-﻿using Autofac;
+﻿using System;
+using Autofac;
 
 #region Singleton
 
@@ -19,8 +20,13 @@ namespace IoCSample05_AutoFacSingleton
             containerBuilder.RegisterType<CustomerService>().As<ICustomerService>();
             var container = containerBuilder.Build();
 
-            var customerRepository = container.Resolve<ICustomerRepository>();
-            var customerService = container.Resolve<ICustomerService>();
+            var firstRepository = container.Resolve<ICustomerRepository>();
+            var secondRepository = container.Resolve<ICustomerRepository>();
+
+            Console.WriteLine(firstRepository.SessionId);
+            Console.WriteLine(secondRepository.SessionId);
+
+            Console.ReadKey();
         }
     }
 }

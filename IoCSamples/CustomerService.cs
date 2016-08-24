@@ -4,20 +4,20 @@ namespace IoCSamples
 {
     public class CustomerService : ICustomerService
     {
-        private ICustomerRepository m_Repository;
-        private ICustomerDTOMapper m_Mapper;
+        private ICustomerRepository _repository;
+        private ICustomerDTOMapper _mapper;
 
         [InjectionMethod]
         public void Initialize(
             ICustomerRepository repository,
-            [Dependency]ICustomerDTOMapper mapper)
+            ICustomerDTOMapper mapper)
         {
-            m_Repository = repository;
-            m_Mapper = mapper;
+            _repository = repository;
+            _mapper = mapper;
         }
     }
 
-    public class ICustomerDTOMapper
+    public interface ICustomerDTOMapper
     {
     }
 

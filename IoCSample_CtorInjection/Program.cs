@@ -9,14 +9,11 @@ namespace IoCSample_CtorInjection
         {
             UnityContainer container = new UnityContainer();
 
-            container.LoadConfiguration();
-
             container.RegisterType<ICustomerRepository, CustomerRepository>();
-
             container.RegisterType<ICustomerDTOMapper, CustomerDtoMapper>();
             container.RegisterType<ICustomerService, CustomerService>();
 
-            var customerService = container.Resolve<CustomerService>();
+            var customerService = container.Resolve<ICustomerService>();
 
 
 

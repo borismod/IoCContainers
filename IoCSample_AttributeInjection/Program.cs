@@ -6,11 +6,13 @@ namespace IoCSample_AttributeInjection
     {
         static void Main(string[] args)
         {
-            UnityContainer ioc = new UnityContainer();
-            ioc.RegisterType<ICustomerRepository, CustomerRepository>();
-            ioc.RegisterType<ICustomerDTOMapper, CustomerDtoMapper>();
-            ioc.RegisterType<ICustomerService, CustomerService>();
-            var customerService = ioc.Resolve<CustomerService>();
+            UnityContainer container = new UnityContainer();
+            container.RegisterType<ICustomerRepository, CustomerRepository>();
+            container.RegisterType<ICustomerDTOMapper, CustomerDtoMapper>();
+            container.RegisterType<ICustomerService, CustomerService>();
+
+
+            var customerService = container.Resolve<ICustomerService>();
         }
     }
 }

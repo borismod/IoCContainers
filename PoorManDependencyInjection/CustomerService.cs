@@ -8,23 +8,23 @@ namespace PoorManDependencyInjection
 {
     public class CustomerService : ICustomerService
     {
-        private ICustomerRepository m_Repository;
-        private ICustomerDTOMapper m_Mapper;
+        private ICustomerRepository _repository;
+        private ICustomerDtoMapper _mapper;
 
         public CustomerService(
             ICustomerRepository repository,
-            ICustomerDTOMapper mapper)
+            ICustomerDtoMapper mapper)
         {
-            m_Repository = repository;
-            m_Mapper = mapper;
+            _repository = repository;
+            _mapper = mapper;
         }
     }
 
-    public class ICustomerDTOMapper
+    public interface ICustomerDtoMapper
     {
     }
 
-    public class CustomerDtoMapper : ICustomerDTOMapper
+    public class CustomerDtoMapper : ICustomerDtoMapper
     {
     }
 

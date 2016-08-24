@@ -15,12 +15,28 @@ namespace IoCSample07_AutoFacAssemblyScanning
     {
         static void Main(string[] args)
         {
+            RegisterAll();
+        }
+
+        private static void RegisterAll()
+        {
             var containerBuilder = new ContainerBuilder();
-            
+
             containerBuilder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
-                .Where(t=>!t.GetCustomAttributes<DoNotRegister>().Any())
-                   .AsImplementedInterfaces();
-            
+                .AsImplementedInterfaces();
+
+            var container = containerBuilder.Build();
+
+            var customerService = container.Resolve<ICustomerService>();
+        }
+        private static void RegisterExcept()
+        {
+            var containerBuilder = new ContainerBuilder();
+
+            containerBuilder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+                .Where(t => !t.GetCustomAttributes<DoNotRegister>().Any())
+                .AsImplementedInterfaces();
+
             var container = containerBuilder.Build();
 
             var customerService = container.Resolve<ICustomerService>();

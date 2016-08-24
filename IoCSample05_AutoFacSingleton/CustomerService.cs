@@ -4,15 +4,15 @@ namespace IoCSample05_AutoFacSingleton
 {
     public class CustomerService : ICustomerService
     {
-        private ICustomerRepository m_Repository;
-        private ICustomerDtoMapper m_Mapper;
+        private ICustomerRepository _repository;
+        private ICustomerDtoMapper _mapper;
 
         public CustomerService(
             ICustomerRepository repository,
             ICustomerDtoMapper mapper)
         {
-            m_Repository = repository;
-            m_Mapper = mapper;
+            _repository = repository;
+            _mapper = mapper;
         }
     }
 
@@ -30,14 +30,20 @@ namespace IoCSample05_AutoFacSingleton
 
     public interface ICustomerRepository
     {
+        Guid SessionId { get; }
     }
 
     public class CustomerRepository : ICustomerRepository
     {
-        private Guid m_SessionId;
+        private readonly Guid sessionId;
         public CustomerRepository()
         {
-            m_SessionId = Guid.NewGuid();
+            sessionId = Guid.NewGuid();
+        }
+
+        public Guid SessionId
+        {
+            get { return sessionId; }
         }
     }
 }
