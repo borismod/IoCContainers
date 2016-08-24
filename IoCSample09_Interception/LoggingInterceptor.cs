@@ -7,23 +7,25 @@ namespace IoCSample09_Interception
 {
     public class LoggingInterceptor : IInterceptor
     {
-        private readonly ILog m_Log;
+        private readonly ILog _log;
 
         public LoggingInterceptor(ILog log)
         {
-            m_Log = log;
+            _log = log;
         }
 
         public void Intercept(IInvocation invocation)
         {
             var stopwatch = Stopwatch.StartNew();
+
             invocation.Proceed();
+
             stopwatch.Stop();
 
-            m_Log.Debug(string.Format("Calling method {0} with parameters {1} took {2} ms", 
+            _log.DebugFormat("{0} ( {1} ) took {2} ms", 
                 invocation.Method.Name, 
                 string.Join(", ", invocation.Arguments.Select(a => (a ?? "").ToString()).ToArray()),
-                stopwatch.ElapsedMilliseconds));
+                stopwatch.ElapsedMilliseconds);
 
         }
     }

@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using Autofac;
+﻿using Autofac;
 
 #region Enumeration
 
@@ -16,14 +15,14 @@ namespace IoCSample06_AutoFacEnumerate
     {
         private static void Main(string[] args)
         {
-            var containerBuilder = new ContainerBuilder();
+            ContainerBuilder containerBuilder = new ContainerBuilder();
             containerBuilder.RegisterType<CustomerService>().As<ICustomerService>();
             containerBuilder.RegisterType<MessageHandler1>().As<IMessageHandler>();
             containerBuilder.RegisterType<MessageHandler2>().As<IMessageHandler>();
             containerBuilder.RegisterType<MessageHandler3>().As<IMessageHandler>();
-            var container = containerBuilder.Build();
+            IContainer container = containerBuilder.Build();
 
-            var customerService = container.Resolve<ICustomerService>();
+            ICustomerService customerService = container.Resolve<ICustomerService>();
         }
     }
 }

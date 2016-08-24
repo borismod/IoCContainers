@@ -13,11 +13,11 @@ namespace IoCSample07_AutoFacAssemblyScanning
 
     public class CustomerService : ICustomerService
     {
-        private readonly IList<IMessageHandler> m_MessageHandlers;
+        private readonly IList<IMessageHandler> _messageHandlers;
 
         public CustomerService(IList<IMessageHandler> messageHandlers)
         {
-            m_MessageHandlers = messageHandlers;
+            _messageHandlers = messageHandlers;
         }
     }
 

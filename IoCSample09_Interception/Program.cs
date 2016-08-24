@@ -21,7 +21,7 @@ namespace IoCSample09_Interception
             var container = containerBuilder.Build();
 
             var customerService = container.Resolve<ICustomerService>();
-            for (int i = 1000 - 1; i >= 0; i--)
+            for (int i = 0; i < 1000; i++)
             {
                 customerService.AddCustomer();
             }

@@ -20,14 +20,14 @@ namespace IoCSample07_AutoFacAssemblyScanning
 
         private static void RegisterAll()
         {
-            var containerBuilder = new ContainerBuilder();
+            ContainerBuilder containerBuilder = new ContainerBuilder();
 
             containerBuilder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
                 .AsImplementedInterfaces();
 
-            var container = containerBuilder.Build();
+            IContainer container = containerBuilder.Build();
 
-            var customerService = container.Resolve<ICustomerService>();
+            ICustomerService customerService = container.Resolve<ICustomerService>();
         }
         private static void RegisterExcept()
         {

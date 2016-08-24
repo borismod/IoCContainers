@@ -13,12 +13,16 @@ namespace IoCSample05_AutoFacSingleton
     {
         static void Main(string[] args)
         {
-            var containerBuilder = new ContainerBuilder();
+            ContainerBuilder containerBuilder = new ContainerBuilder();
+
             containerBuilder.RegisterType<CustomerRepository>().As<ICustomerRepository>()
                 .SingleInstance();
+
             containerBuilder.RegisterType<CustomerDtoMapper>().As<ICustomerDtoMapper>();
             containerBuilder.RegisterType<CustomerService>().As<ICustomerService>();
-            var container = containerBuilder.Build();
+
+
+            IContainer container = containerBuilder.Build();
 
             var firstRepository = container.Resolve<ICustomerRepository>();
             var secondRepository = container.Resolve<ICustomerRepository>();

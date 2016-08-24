@@ -13,19 +13,19 @@ namespace IoCSample09_Interception
 
     public class CustomerService : ICustomerService
     {
-        private readonly ILog m_Logger;
-        private readonly Random m_Random;
+        private readonly ILog _logger;
+        private readonly Random _random;
 
         public CustomerService(ILog logger)
         {
-            m_Logger = logger;
-            m_Random = new Random();
+            _logger = logger;
+            _random = new Random();
         }
 
         public void AddCustomer()
         {
-            Thread.Sleep(m_Random.Next(1000));
-            m_Logger.Info("Adding customer...");
+            Thread.Sleep(_random.Next(1000));
+            _logger.Info("Adding customer...");
         }
     }
 }
